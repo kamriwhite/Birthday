@@ -1,7 +1,11 @@
 $lightB: #5496e6;
 $darkB: #518bde;
 $grey: #444;
+$GREY: #e6e6e6;
 $yellow: #f7d745;
+
+$font-Roboto: 'Roboto Condensed';
+$font-Mont: 'Montserrat';
 
 .grid {
     height: 100vh;
@@ -20,10 +24,23 @@ $yellow: #f7d745;
 
         font-size:18px;
         color: white;
-        font-family: 'Montserrat';
+        font-family: $font-Mont;
         font-weight: 300;
         line-height: 22px;
         padding: 55px 75px;
+    }
 
+    &__reamaining {
+        grid-row: 4/-1;
+        grid-column: 1/-1;
+
+        text-align: center;
+        margin-top: 33px;
+
+        color: $grey;
+        font-family: $font-Mont;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: center;
     }
 }
