@@ -27,7 +27,6 @@ constructor(props) {
   }
 
 this.handleGenerate = this.handleGenerate.bind(this);
-
 }
 
 handleChange = function(date) {
@@ -41,15 +40,31 @@ handleChange = function(date) {
 handleGenerate = function() {
   this.setState({ active: true })
 
-  var countDownDate = this.state.startDate.toDate().getTime();
+  var bday = this.state.startDate.toDate();
+  var today = new Date();
+  var currentMonth = today.getMonth();
+  var birthMonth = bday.getMonth();
 
+  if(birthMonth > currentMonth) {
+    bday.setFullYear(today.getFullYear())
+  } else if(birthMonth < currentMonth) {
+    bday.setFullYear(today.getFullYear() +1)
+  } else if(birthMonth = currentMonth) {
+    var currentDay = today.getDate();
+    var birthDay = today.getDate();
+
+    if (birthDay > currentDay) {
+      bday.setFullYear(today.getFullYear() +1)
+    }
+
+  }
+
+  var countDownDate = this.state.startDate.toDate().getTime();
 
   this.timer = setInterval(function() {
 
   var now = new Date().getTime();
-  
   var distance = countDownDate - now;
-
 
   var days = math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = math.floor(
