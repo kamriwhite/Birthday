@@ -13,8 +13,8 @@ export default class App extends Component {
 constructor(props) {
   super(props)
 
-  var timer= 0;
-  
+  this.timer= 0;
+
   this.state = {
     active: false,
     startDate: moment(),
@@ -42,46 +42,43 @@ handleGenerate = function() {
 
   var countDownDate = this.state.startDate.toDate().getTime();
 
-  
-  timer = setInterval(function() {
 
+  this.timer = setInterval(function() {
 
   var now = new Date().getTime();
-  
   
   var distance = countDownDate - now;
 
 
   var days = math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var hours = math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   var minutes = math.floor((distance % (1000 * 60 * 60)) / (1000 *60));
   var seconds = math.floor((distance % (1000 * 60)) / 1000);
 
-  
+
   const time = days + "d " + hours + "h " + minutes + "m" + seconds + "s ";
-  
-  this.setState({
-    timeRemaining: {
+  const timeRemaining = {
       days,
       hours,
       minutes,
       seconds
-    }
-  })
+    };
+    this.setState({timeRemaining});
 
-  console.log(timeRemaining);
 
-  if (distance < 0)  {
-    clearInterval(x);
+    if (distance < 0)  {
+      clearInterval(timeRemaining);
 
-    }
-}, 1000);
-  }.bind(this)
+      }
+  }.bind(this), 1000);
+    }.bind(this)
 
 renderItems = function() {
   if(this.state.active) {
     return [
-      <Clock/>,
+      <Clock timeRemaining={this.state.timeRemaining} />,
       ChangeDate('Change Date', () => this.setState({ active: false })),
       LargeText('03/04'),
       <label className="grid__remaining">Remaining until your 21st birthday</label>
