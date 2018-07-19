@@ -32,6 +32,7 @@ this.handleGenerate = this.handleGenerate.bind(this);
 
 handleChange = function(date) {
   console.log('trying to change date for', date._d);
+  clearInterval(this.timer);
   this.setState({
     startDate: date
   });
