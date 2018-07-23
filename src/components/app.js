@@ -99,19 +99,28 @@ handleGenerate = function() {
   }.bind(this), 1000);
     }.bind(this)
 
+    getBirthDate = function(date) {
+      const month = date.getMonth() +1;
+      const day = date.getDate();
+      if(month < 10) {
+        return `0${month}/${day}`
+      }
+      return `${month}/${day}`
+    }.bind(this);
+
 renderItems = function() {
   if(this.state.active) {
     return [
-      <Clock timeRemaining={this.state.timeRemaining} />,
+      <Clock key={0} timeRemaining={this.state.timeRemaining} />,
       ChangeDate('Change Date', () => this.setState({ active: false })),
-      LargeText('03/04'),
-      <label className="grid__remaining">
+      LargeText(this.getBirthDate(this.state.startDate.toDate())),
+      <label key={3} className="grid__remaining">
       Remaining until you turn {this.state.age}
       </label>
     ]
   } else {
     return [
-      <Picker startDate={this.state.startDate} callBack = {this.handleChange}/>,
+      <Picker startDate={this.state.startDate} callBack = {this.handleChange} key={0}/>,
       Button('Generate Countdown', () => this.handleGenerate()) 
     ]
   } 
