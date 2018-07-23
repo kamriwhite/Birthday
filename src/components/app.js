@@ -71,7 +71,7 @@ handleGenerate = function() {
 
   this.timer = setInterval(function() {
 
-  var now = new Date().getTime();
+  var now = moment().todate().getTime();
   var distance = countDownDate - now;
 
   var days = math.floor(distance / (1000 * 60 * 60 * 24));
