@@ -1,43 +1,43 @@
 .clock {
-    grid-row: 3/4;
-    grid-column: 2/10;
-    align-self: end;        
+        --clockShape: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
 
-    background-color: $grey;
-    text-align: left;
-    height: 85%;
-    width: 100%;
+        grid-column: 2/10;
+        grid-row: 3/4;
+        align-self: end;        
+
+        background-color: $grey;
+        height: 85%;
+        width: 100%;
  
-    -webkit-clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
-    clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+        clip-path: var(--clockShape);
+        -webkit-clip-path: var(--clockShape);
     
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 275px));
-    grid-column-gap: 10px;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    align-content: center;
-    
-    &__box {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: column;
-    }
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        align-items: center;
+        justify-items: center;
 
-    &__title {
-        font-size: 22px;
-        line-height: 25px;
-        color: $yellow;
-        font-family: "Roboto Condensed";
-    }
+        justify-content: center;
+        align-content: center;
 
-    &__amount {
-        font-size: 90px;
-        font-weight: bold;
-        line-height: 115px;
-        color: white;
-        font-family: "Roboto Condensed";
+        font-family: $font-Roboto;
 
-    }
+        &__title {
+                font-size: 22px;
+                line-height: 25px;
+                color: $yellow;
+        }
+
+        &__amount {
+            font-size: 90px;
+            font-weight: bold;
+            line-height: 115px;
+            color: white;
+        }
+        
+        div {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+        }
 }

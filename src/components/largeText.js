@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LargeText = (text) => {
-    return (
-        <div key={2} className="lareg-text">
-            {text}
-        </div>
-    )
-}
+const largeText = (title) => {
+        return (
+                <div key={2} className="largeText">
+                        { title }
+                </div>
+        );
+};
 
-export default LargText;
+export default largeText;

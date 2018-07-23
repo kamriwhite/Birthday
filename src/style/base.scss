@@ -1,46 +1,41 @@
 $lightB: #5496e6;
 $darkB: #518bde;
-$grey: #444;
+$grey: #444444;
 $GREY: #e6e6e6;
 $yellow: #f7d745;
-
 $font-Roboto: 'Roboto Condensed';
 $font-Mont: 'Montserrat';
 
 .grid {
-    height: 100vh;
-    width: 100vw;
+        height: 100vh;
+        width: 100vw;
 
-    display: grid;
-    grid-template-rows: repeat(4, minmax(200px, 1fr));
-    grid-template-columns: repeat(10, minmax(150px, 1fr));
+        display: grid;
+        grid-template-rows: repeat(4, minmax(150px, 1fr));
+        grid-template-columns: repeat(10, minmax(100px, 1fr));
 
-    &__title {
-        grid-row: 1/2;
-        grid-column: 1/4;
+        h1 {
+                grid-row: 1/2;
+                grid-column: 1/4;
+                justify-self: center;
+                font-size:24px;
+                padding: 55px 75px;
+                color: white;
+                font-family: $font-Mont;
+                font-weight: 300;
+                line-height: 22px;
+        }
 
-        justify-self: center;
-        //align-self: center;
+        &__reamaining {
+                grid-row: 1/-1;
+                grid-column: 4/-1;
 
-        font-size:18px;
-        color: white;
-        font-family: $font-Mont;
-        font-weight: 300;
-        line-height: 22px;
-        padding: 55px 75px;
-    }
+                margin-top: 33px;
 
-    &__reamaining {
-        grid-row: 4/-1;
-        grid-column: 1/-1;
-
-        text-align: center;
-        margin-top: 33px;
-
-        color: $grey;
-        font-family: $font-Mont;
-        font-weight: 300;
-        line-height: 22px;
-        text-align: center;
-    }
+                text-align: center;
+                color: $grey;
+                font-family: $font-Mont;
+                font-size: 22px;
+                font-weight: 300;
+        }
 }

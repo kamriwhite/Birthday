@@ -1,25 +1,24 @@
-.change-date {
-    grid-row: 3/4;
-    grid-column: 4/6;
-    justify-self: start;
+.changeDate {
+        grid-column: 3/4;
+        grid-row: 2/3;
 
-    font-size: 24px;
-    line-height: 19px;
-    text-align: center;
-    font-family: $font-Roboto;
-    color: white;
-    font-weight: 100;
+        font-size: 24px;
+        line-height: 19px;
+        text-align: center;
+        font-family: $font-Roboto;
+        color: white;
+        font-weight: 100;
+        background-color: transparent;
 
-    background-color: transparent;
-    border: none;
+        transform: rotate(-69deg) translate(-70px);
+        align-self: start;
+        justify-self: start;
 
-    transform: rotate(-69deg) translate(0, -70px);
+        &:focus {
+                outline: none;
+        }
 
-    &:focus {
-        outline: none;
-    }
-
-    i {
-        margin-right: 20px;
-    }
+        i {
+            margin-right: 10px;
+        }
 }
