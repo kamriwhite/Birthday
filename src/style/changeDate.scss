@@ -1,16 +1,16 @@
 .changeDate {
-        grid-column: 3/4;
+        grid-column: 2/4;
         grid-row: 2/3;
 
         font-size: 24px;
         line-height: 19px;
         text-align: center;
         font-family: $font-Roboto;
-        color: white;
+        color: #b6b3b3;//white;
         font-weight: 100;
         background-color: transparent;
 
-        transform: rotate(-69deg) translate(-70px);
+        transform: rotate(-72deg) translate(-20px, 74px);
         align-self: start;
         justify-self: start;
 

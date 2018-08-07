@@ -108,7 +108,7 @@ export default class App extends Component {
         <Clock key={0} timeRemaining={this.state.timeRemaining}/>,
         ChangeDate('Change Date', () => this.setState({ active: false })),
         LargeText(this.getBirthDate()),
-        <label key={3} className="grid__remaining">Remaining until you turn {this.state.age}!</label>
+        <label key={3} className="grid__remaining">Remaining until you're {this.state.age}!</label>
       ];
     }
     else {

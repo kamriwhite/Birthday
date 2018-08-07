@@ -1,8 +1,8 @@
-$lightB: #5496e6;
-$darkB: #518bde;
-$grey: #444444;
-$GREY: #e6e6e6;
-$yellow: #f7d745;
+$lightB: #240a2b;//#5496e6;
+$darkB: #1f0426;//#518bde;
+//$grey: #313031;//#444444;
+$GREY: #2d2d2d;//#e6e6e6;
+$yellow: #1b8184;//#f7d745;
 $font-Roboto: 'Roboto Condensed';
 $font-Mont: 'Montserrat';
 
@@ -20,7 +20,7 @@ $font-Mont: 'Montserrat';
                 justify-self: center;
                 font-size:24px;
                 padding: 55px 75px;
-                color: white;
+                color: #b6b3b3;//white;
                 font-family: $font-Mont;
                 font-weight: 300;
                 line-height: 22px;
@@ -33,7 +33,7 @@ $font-Mont: 'Montserrat';
                 margin-top: 33px;
 
                 text-align: center;
-                color: $grey;
+                color: $GREY;
                 font-family: $font-Mont;
                 font-size: 22px;
                 font-weight: 300;

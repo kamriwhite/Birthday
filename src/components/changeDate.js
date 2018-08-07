@@ -9,4 +9,4 @@ const ChangeDate = (title, callback) => {
         );
 };
 
-export default changeDate;
+export default ChangeDate;
